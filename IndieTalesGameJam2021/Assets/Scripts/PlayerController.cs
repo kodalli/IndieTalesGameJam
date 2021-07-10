@@ -72,16 +72,9 @@ public class PlayerController : MonoBehaviour {
         reanimator.RemoveListener(Drivers.WalkUp, () => SetFacingDirection(0, 1));
         reanimator.RemoveListener(Drivers.WalkDown, () => SetFacingDirection(0, -1));
         reanimator.RemoveListener(Drivers.Idle, () => SetFacingDirection(0, -1));
-
-    }
-
-    private void SetFacingDirection(int x, int y) {
-        facingDirection = new Vector2(x, y);
     }
 
     private void Update() {
-        Debug.Log(facingDirection);
-        
         reanimator.Set(Drivers.IsMoving, MovementInput != Vector2.zero);
         reanimator.Set(Drivers.IsMovingHorizontal, MovementInput.x != 0);
         reanimator.Set(Drivers.IsMovingRight, MovementInput.x > 0);
@@ -98,11 +91,16 @@ public class PlayerController : MonoBehaviour {
                 break;
             case PlayerState.Hit:
                 break;
+            default:
+                throw new ArgumentOutOfRangeException();
         }
     }
 
     private void OnMove(Vector2 value) => MovementInput = value;
     private void OnDash() => EnterDashState();
+    public void EnterMovementState() {
+        State = PlayerState.Movement;
+    }
 
     private void EnterDashState() {
         if (State != PlayerState.Movement || !dashStopwatch.IsReady) return;
@@ -110,9 +108,8 @@ public class PlayerController : MonoBehaviour {
 
         dashStopwatch.Split();
     }
-
-    public void EnterMovementState() {
-        State = PlayerState.Movement;
+    private void SetFacingDirection(int x, int y) {
+        facingDirection = new Vector2(x, y);
     }
 
     private void UpdateDashState() {

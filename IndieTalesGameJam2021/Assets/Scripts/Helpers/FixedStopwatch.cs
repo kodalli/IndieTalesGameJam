@@ -10,6 +10,7 @@ namespace Thunder.Extensions {
         public float Completion => Mathf.Clamp01(Elapsed / duration);
 
         private float _timestamp;
+        
         [SerializeField] private float duration;
         [SerializeField] private float cooldown;
         public float Elapsed => Time.fixedTime - _timestamp;
