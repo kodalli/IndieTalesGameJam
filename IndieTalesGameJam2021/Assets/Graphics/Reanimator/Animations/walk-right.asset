@@ -35,5 +35,6 @@ MonoBehaviour:
     percentageBased: 0
     guid: 3bacbf56-6516-4983-8916-17015805992b
   drivers:
-    keys: []
-    values: 
+    keys:
+    - walkRight
+    values: 00000000

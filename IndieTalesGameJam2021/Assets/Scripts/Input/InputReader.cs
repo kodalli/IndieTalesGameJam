@@ -16,6 +16,7 @@ public class InputReader : ScriptableObject, GameInput.IGameplayActions, GameInp
     public event UnityAction DashEvent;
     public event UnityAction DashCanceledEvent;
     public event UnityAction<Vector2> DashKeyboardEvent;
+    public event UnityAction<Vector2> MousePosEvent; 
 
     // Menu
     public event UnityAction OpenMenuWindow;
@@ -102,6 +103,10 @@ public class InputReader : ScriptableObject, GameInput.IGameplayActions, GameInp
     public void OnMenu(InputAction.CallbackContext context) {
         if (OpenMenuWindow != null && context.phase == InputActionPhase.Started)
             OpenMenuWindow?.Invoke();
+    }
+
+    public void OnMouse(InputAction.CallbackContext context) {
+        MousePosEvent?.Invoke(context.ReadValue<Vector2>());
     }
 
     #endregion

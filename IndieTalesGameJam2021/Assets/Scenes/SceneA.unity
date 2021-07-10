@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -149,6 +150,25 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
+--- !u!114 &519420030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0af8c2b5199b2d4aabc50ddae595fba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInputData: {fileID: 11400000, guid: 5bfdbfee2e2dece428d31abacbbc386e, type: 2}
+  smoothTime: 0.2
+  cameraDist: 3.5
+  cameraFollowCursor: 1
+  magnitude: 0.1
+  length: 0.2
+  enableShake: 0
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -26376,9 +26396,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3002518489345346468, guid: 436305a44c3d908419253186084e310f, type: 3}
+      propertyPath: dashSpeed
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3002518489345346468, guid: 436305a44c3d908419253186084e310f, type: 3}
+      propertyPath: inputReader
+      value: 
+      objectReference: {fileID: 11400000, guid: 67eac70d777e06345a498ebd5a6af202, type: 2}
+    - target: {fileID: 3002518489345346468, guid: 436305a44c3d908419253186084e310f, type: 3}
+      propertyPath: dashStopwatch.cooldown
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3002518489345346468, guid: 436305a44c3d908419253186084e310f, type: 3}
+      propertyPath: dashStopwatch.duration
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 3002518489345346469, guid: 436305a44c3d908419253186084e310f, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3002518489345346471, guid: 436305a44c3d908419253186084e310f, type: 3}
+      propertyPath: fps
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 436305a44c3d908419253186084e310f, type: 3}

@@ -12,6 +12,7 @@ public class PlayerInputData : ScriptableObject {
     [SerializeField] private bool attackInput = false;
     [SerializeField] private bool dashInput = false;
     [SerializeField] private Vector2 dashKeyboardInput;
+    [SerializeField] private Vector3 mousePosition;
 
     // Properties
     public Vector2 MovementInput {
@@ -38,6 +39,7 @@ public class PlayerInputData : ScriptableObject {
         get => dashKeyboardInput;
         set => dashKeyboardInput = value;
     }
+    public Vector2 MousePosition => mousePosition;
 
 
     public void RegisterEvents() {
@@ -50,6 +52,7 @@ public class PlayerInputData : ScriptableObject {
             inputReader.DashKeyboardEvent += OnDashKeyboard;
             inputReader.AttackEvent += OnAttackInitiated;
             inputReader.AttackCanceledEvent += OnAttackCanceled;
+            inputReader.MousePosEvent += OnMouse;
         }
         catch (Exception e) {
             Debug.LogException(e);
@@ -66,6 +69,7 @@ public class PlayerInputData : ScriptableObject {
             inputReader.DashKeyboardEvent -= OnDashKeyboard;
             inputReader.AttackEvent -= OnAttackInitiated;
             inputReader.AttackCanceledEvent -= OnAttackCanceled;
+            inputReader.MousePosEvent -= OnMouse;
         }
         catch (Exception e) {
             Debug.LogException(e);
@@ -81,6 +85,7 @@ public class PlayerInputData : ScriptableObject {
     private void OnDashKeyboard(Vector2 input) => DashKeyboardInput = input;
     private void OnAttackInitiated() => AttackInput = true;
     private void OnAttackCanceled() => AttackInput = false;
+    private void OnMouse(Vector2 value) => mousePosition = value;
 
     public void EnableGameplayInput() => inputReader.EnableGameplayInput();
 

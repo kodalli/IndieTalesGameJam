@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Utils {
+namespace Thunder.Extensions {
     [Serializable]
     public class FixedStopwatch
     {
