@@ -23,5 +23,6 @@ MonoBehaviour:
     percentageBased: 0
     guid: 046e3046-2b4f-4b71-a6c3-5de4e2624f86
   drivers:
-    keys: []
-    values: 
+    keys:
+    - idle
+    values: 00000000
