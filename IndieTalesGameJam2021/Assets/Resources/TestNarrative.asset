@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b3b045ba31c4b189ec3fe8db4471315, type: 3}
+  m_Name: TestNarrative
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGUID: 65299d7b-d96b-48ba-be9e-a842dc782e3f
+    PortName: Next
+    TargetNodeGUID: 9f942df4-9ee8-4850-9150-fddc6365da59
+  - BaseNodeGUID: 9f942df4-9ee8-4850-9150-fddc6365da59
+    PortName: continue
+    TargetNodeGUID: 859a7b99-0f9f-4aee-a45b-68c1697ca974
+  - BaseNodeGUID: 859a7b99-0f9f-4aee-a45b-68c1697ca974
+    PortName: continue
+    TargetNodeGUID: ee17c1af-7bca-4c5b-9c2a-bb9304bc5fbf
+  - BaseNodeGUID: ee17c1af-7bca-4c5b-9c2a-bb9304bc5fbf
+    PortName: continue
+    TargetNodeGUID: de604236-d2de-4d54-9ca0-c798597e1a5b
+  DialogueNodeData:
+  - NodeGUID: 859a7b99-0f9f-4aee-a45b-68c1697ca974
+    DialogueText: It seems you have exceeded your lifetime's allowed sin count.
+    Position: {x: 461, y: 347}
+  - NodeGUID: 9f942df4-9ee8-4850-9150-fddc6365da59
+    DialogueText: Hello Billy.
+    Position: {x: 631, y: 200}
+  - NodeGUID: de604236-d2de-4d54-9ca0-c798597e1a5b
+    DialogueText: Stay in your room and let my minions take you away.
+    Position: {x: 502, y: 660}
+  - NodeGUID: ee17c1af-7bca-4c5b-9c2a-bb9304bc5fbf
+    DialogueText: I will now have to drag you to hell for your punishment.
+    Position: {x: 502, y: 494}
+  ExposedProperties:
+  - PropertyName: New String
+    PropertyValue: New Value
+  CommentBlockData: []
