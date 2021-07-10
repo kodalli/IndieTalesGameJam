@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: root
   m_EditorClassIdentifier: 
   nodes:
-  - {fileID: 11400000, guid: 56793ff93b0237c48a950d3387111b09, type: 2}
+  - {fileID: 11400000, guid: b22106470d0fcc3408388c02e50abd5b, type: 2}
   - {fileID: 11400000, guid: e1f8ef09e9df35643a717ebff0b4abce, type: 2}
   controlDriver:
     name: isMoving

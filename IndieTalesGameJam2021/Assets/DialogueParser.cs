@@ -47,7 +47,7 @@ namespace MainGame.DialogueGraph {
         IEnumerator PlayDialogue(string text) {
             var count = 0;
             while (count <= text.Length) {
-                yield return new WaitForSeconds(0.1f);
+                yield return new WaitForSeconds(0.04f);
                 // yield return new WaitForEndOfFrame();
                 dialogueText.text = text.Substring(0, count);
                 count++;

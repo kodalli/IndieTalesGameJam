@@ -15,8 +15,9 @@ MonoBehaviour:
   cels:
   - sprite: {fileID: -1892634514498182350, guid: b95358199da23c643ae9e3c4250db8a3, type: 3}
     drivers:
-      keys: []
-      values: 
+      keys:
+      - idleTransition
+      values: 03000000
   controlDriver:
     name: 
     autoIncrement: 1
