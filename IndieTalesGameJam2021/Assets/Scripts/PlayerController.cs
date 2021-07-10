@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Aarthificial.Reanimation;
 using Thunder.Extensions;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
 
 public enum PlayerState {
     Movement = 0,
@@ -36,36 +37,40 @@ public class PlayerController : MonoBehaviour {
 
     private Reanimator reanimator;
     private CollisionDetection collisionDetection;
+    private GameObject flashLight;
 
     public PlayerState State { get; set; } = PlayerState.Movement;
     public Vector2 MovementInput { get; private set; }
 
     private bool canDash;
     private int enemyLayer;
-    private bool walkingVertical;
-    private bool walkingHorizontal;
     private Vector2 facingDirection;
+    private Vector2 lightDirectionInput;
+    private Vector2 lightDirection;
 
     private void Awake() {
         reanimator = GetComponent<Reanimator>();
         collisionDetection = GetComponent<CollisionDetection>();
+        flashLight = transform.Find("PointLight").gameObject;
         enemyLayer = LayerMask.NameToLayer($"Enemy");
     }
 
     private void OnEnable() {
+        inputReader.MoveEvent += OnMove;
+        inputReader.AttackEvent += OnDash;
+        inputReader.MousePosEvent += OnMouse;
+        
         reanimator.AddListener(Drivers.WalkRight, () => SetFacingDirection(1, 0));
         reanimator.AddListener(Drivers.WalkLeft, () => SetFacingDirection(-1, 0));
         reanimator.AddListener(Drivers.WalkUp, () => SetFacingDirection(0, 1));
         reanimator.AddListener(Drivers.WalkDown, () => SetFacingDirection(0, -1));
         reanimator.AddListener(Drivers.Idle, () => SetFacingDirection(0, -1));
-
-        inputReader.MoveEvent += OnMove;
-        inputReader.AttackEvent += OnDash;
     }
 
     private void OnDisable() {
         inputReader.MoveEvent -= OnMove;
         inputReader.AttackEvent -= OnDash;
+        inputReader.MousePosEvent -= OnMouse;
 
         reanimator.RemoveListener(Drivers.WalkRight, () => SetFacingDirection(1, 0));
         reanimator.RemoveListener(Drivers.WalkLeft, () => SetFacingDirection(-1, 0));
@@ -73,8 +78,11 @@ public class PlayerController : MonoBehaviour {
         reanimator.RemoveListener(Drivers.WalkDown, () => SetFacingDirection(0, -1));
         reanimator.RemoveListener(Drivers.Idle, () => SetFacingDirection(0, -1));
     }
+    
 
     private void Update() {
+        UpdateLightDirection();
+        
         reanimator.Set(Drivers.IsMoving, MovementInput != Vector2.zero);
         reanimator.Set(Drivers.IsMovingHorizontal, MovementInput.x != 0);
         reanimator.Set(Drivers.IsMovingRight, MovementInput.x > 0);
@@ -98,6 +106,7 @@ public class PlayerController : MonoBehaviour {
 
     private void OnMove(Vector2 value) => MovementInput = value;
     private void OnDash() => EnterDashState();
+    private void OnMouse(Vector2 value) => lightDirectionInput = Camera.main.ScreenToWorldPoint(value) - transform.position;
     public void EnterMovementState() {
         State = PlayerState.Movement;
     }
@@ -110,6 +119,16 @@ public class PlayerController : MonoBehaviour {
     }
     private void SetFacingDirection(int x, int y) {
         facingDirection = new Vector2(x, y);
+    }
+
+    private void UpdateLightDirection() {
+        if (lightDirectionInput != Vector2.zero) {
+            lightDirection = lightDirectionInput;
+            lightDirection.Normalize();
+        }
+
+        var angle = Vector2.SignedAngle(Vector2.right, lightDirection);
+        flashLight.transform.rotation = Quaternion.Euler(0f, 0f, angle + 270);
     }
 
     private void UpdateDashState() {
