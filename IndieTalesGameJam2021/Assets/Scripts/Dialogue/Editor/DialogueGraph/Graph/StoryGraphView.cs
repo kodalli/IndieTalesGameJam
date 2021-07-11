@@ -193,7 +193,7 @@ namespace MainGame.DialogueGraph {
                 title = "START",
                 GUID = Guid.NewGuid().ToString(),
                 DialogueText = "ENTRYPOINT",
-                EntyPoint = true
+                EntryPoint = true
             };
 
             var generatedPort = GetPortInstance(nodeCache, Direction.Output);

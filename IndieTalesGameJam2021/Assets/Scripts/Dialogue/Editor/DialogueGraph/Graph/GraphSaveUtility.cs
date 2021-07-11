@@ -66,7 +66,7 @@ namespace MainGame.DialogueGraph {
                 });
             }
 
-            foreach (var node in Nodes.Where(node => !node.EntyPoint))
+            foreach (var node in Nodes.Where(node => !node.EntryPoint))
                 dialogueContainerObject.DialogueNodeData.Add(new DialogueNodeData {
                     NodeGUID = node.GUID,
                     DialogueText = node.DialogueText,
@@ -112,9 +112,9 @@ namespace MainGame.DialogueGraph {
         /// Set Entry point GUID then Get All Nodes, remove all and their edges. Leave only the entrypoint node. (Remove its edge too)
         /// </summary>
         private void ClearGraph(){
-            Nodes.Find(x => x.EntyPoint).GUID = _dialogueContainer.NodeLinks[0].BaseNodeGUID;
+            Nodes.Find(x => x.EntryPoint).GUID = _dialogueContainer.NodeLinks[0].BaseNodeGUID;
             foreach (var perNode in Nodes) {
-                if (perNode.EntyPoint) continue;
+                if (perNode.EntryPoint) continue;
                 Edges.Where(x => x.input.node == perNode).ToList()
                     .ForEach(edge => _graphView.RemoveElement(edge));
                 _graphView.RemoveElement(perNode);

@@ -3,14 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using Aarthificial.Reanimation;
 using Thunder.Extensions;
+using ThunderNut.Extensions;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 
-public enum PlayerState {
-    Movement = 0,
-    Dash = 1,
-    Hit = 2,
-}
 
 
 public class PlayerController : MonoBehaviour {
@@ -32,14 +28,15 @@ public class PlayerController : MonoBehaviour {
 
     [SerializeField] private float walkSpeed = 7;
     [SerializeField] private float dashSpeed = 12;
-    [SerializeField] private FixedStopwatch dashStopwatch = new FixedStopwatch();
+    [SerializeField] private Stopwatch dashStopwatch = new Stopwatch();
 
 
     private Reanimator reanimator;
     private CollisionDetection collisionDetection;
     private GameObject flashLight;
-
-    public PlayerState State { get; set; } = PlayerState.Movement;
+    
+    public enum BillyState { Movement = 0, Run = 1, }
+    public BillyState State { get; set; } = BillyState.Movement;
     public Vector2 MovementInput { get; private set; }
 
     private bool canDash;
@@ -82,7 +79,7 @@ public class PlayerController : MonoBehaviour {
 
     private void Update() {
         UpdateLightDirection();
-        
+
         reanimator.Set(Drivers.IsMoving, MovementInput != Vector2.zero);
         reanimator.Set(Drivers.IsMovingHorizontal, MovementInput.x != 0);
         reanimator.Set(Drivers.IsMovingRight, MovementInput.x > 0);
@@ -91,35 +88,27 @@ public class PlayerController : MonoBehaviour {
 
     private void FixedUpdate() {
         switch (State) {
-            case PlayerState.Movement:
+            case BillyState.Movement:
                 UpdateMovementState();
                 break;
-            case PlayerState.Dash:
+            case BillyState.Run:
                 UpdateDashState();
                 break;
-            case PlayerState.Hit:
-                break;
             default:
-                throw new ArgumentOutOfRangeException();
+                throw new ArgumentOutOfRangeException($"Out of Range: ", "Something is wrong with the Enums" );
         }
     }
-
-    private void OnMove(Vector2 value) => MovementInput = value;
-    private void OnDash() => EnterDashState();
-    private void OnMouse(Vector2 value) => lightDirectionInput = Camera.main.ScreenToWorldPoint(value) - transform.position;
-    public void EnterMovementState() {
-        State = PlayerState.Movement;
-    }
+    
+    public void EnterMovementState() => State = BillyState.Movement;
 
     private void EnterDashState() {
-        if (State != PlayerState.Movement || !dashStopwatch.IsReady) return;
-        State = PlayerState.Dash;
-
+        if (State != BillyState.Movement || !dashStopwatch.IsReady) 
+            return;
+        
+        State = BillyState.Run;
         dashStopwatch.Split();
     }
-    private void SetFacingDirection(int x, int y) {
-        facingDirection = new Vector2(x, y);
-    }
+    private void SetFacingDirection(int x, int y) => facingDirection = new Vector2(x, y);
 
     private void UpdateLightDirection() {
         if (lightDirectionInput != Vector2.zero) {
@@ -127,12 +116,11 @@ public class PlayerController : MonoBehaviour {
             lightDirection.Normalize();
         }
 
-        var angle = Vector2.SignedAngle(Vector2.right, lightDirection);
+        float angle = Vector2.SignedAngle(Vector2.right, lightDirection);
         flashLight.transform.rotation = Quaternion.Euler(0f, 0f, angle + 270);
     }
 
     private void UpdateDashState() {
-
         if (facingDirection.x != 0 && facingDirection.y == 0) {
             collisionDetection.rigidbody2D.AddForce(
                 new Vector2(facingDirection.x * dashSpeed, 0) - collisionDetection.rigidbody2D.velocity,
@@ -143,13 +131,12 @@ public class PlayerController : MonoBehaviour {
                 new Vector2(0, facingDirection.y * dashSpeed) - collisionDetection.rigidbody2D.velocity,
                 ForceMode2D.Impulse
             );
-        }       
-        
-        
-        if (dashStopwatch.IsFinished || collisionDetection.wallContact.HasValue) {
-            dashStopwatch.Split();
-            EnterMovementState();
         }
+
+
+        if (!dashStopwatch.IsFinished && !collisionDetection.IsTouchingWall) return;
+        dashStopwatch.Split();
+        EnterMovementState();
     }
 
     private void UpdateMovementState() {
@@ -169,4 +156,9 @@ public class PlayerController : MonoBehaviour {
 
         collisionDetection.rigidbody2D.AddForce(velocityChange, ForceMode2D.Impulse);
     }
+    
+    // --- Event Listeners --- //
+    private void OnMouse(Vector2 value) => lightDirectionInput = Camera.main.ScreenToWorldPoint(value) - transform.position;
+    private void OnMove(Vector2 value) => MovementInput = value;
+    private void OnDash() => EnterDashState();
 }

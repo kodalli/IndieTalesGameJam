@@ -8,6 +8,6 @@ namespace MainGame.DialogueGraph {
     public class DialogueNode : Node {
         public string DialogueText;
         public string GUID;
-        public bool EntyPoint = false;
+        public bool EntryPoint = false;
     }
 }

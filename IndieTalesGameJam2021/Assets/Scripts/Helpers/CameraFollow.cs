@@ -1,9 +1,10 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 // Camera follow the player
 public class CameraFollow : MonoBehaviour {
 
-    [SerializeField] private PlayerInputData playerInputData;
+    [SerializeField] private InputReader inputReader;
     
     private Transform player;
     private float cameraZ;
@@ -24,7 +25,11 @@ public class CameraFollow : MonoBehaviour {
     //[SerializeField] private GameObject crosshairs;
     //private Vector3 cursor;
     //private Vector3 adjust = new Vector3(0f, 0f, 1f);
-    
+    private Vector2 mousePosition;
+
+    private void OnEnable() {
+        inputReader.MousePosEvent += value => { mousePos = value; };
+    }
 
     void Start()
     {
@@ -58,7 +63,7 @@ public class CameraFollow : MonoBehaviour {
     }
     Vector3 CaptureMousePos()
     {
-        Vector2 ret = Camera.main.ScreenToViewportPoint(playerInputData.MousePosition); //raw mouse pos
+        Vector2 ret = Camera.main.ScreenToViewportPoint(mousePosition); //raw mouse pos
         ret *= 2;
         ret -= Vector2.one; //set (0,0) of mouse to middle of screen
         float max = 0.9f;

@@ -23,9 +23,8 @@ MonoBehaviour:
       values: 
   - sprite: {fileID: 8723638923535383827, guid: b95358199da23c643ae9e3c4250db8a3, type: 3}
     drivers:
-      keys:
-      - idleTransition
-      values: 00000000
+      keys: []
+      values: 
   - sprite: {fileID: -3511605124879281880, guid: b95358199da23c643ae9e3c4250db8a3, type: 3}
     drivers:
       keys: []
@@ -37,6 +36,6 @@ MonoBehaviour:
     guid: 3bacbf56-6516-4983-8916-17015805992b
   drivers:
     keys:
-    - walkLeft
     - idleTransition
+    - walkLeft
     values: 0000000000000000
