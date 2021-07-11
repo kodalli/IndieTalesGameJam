@@ -13,6 +13,7 @@ namespace MainGame.DialogueGraph {
         [SerializeField] private TextMeshProUGUI dialogueText;
         [SerializeField] private Button choicePrefab;
         [SerializeField] private Transform buttonContainer;
+        [SerializeField] private AudioClip sound;
 
         private void Start(){
             var narrativeData = dialogue.NodeLinks.First(); //Entrypoint node
@@ -38,6 +39,7 @@ namespace MainGame.DialogueGraph {
             while (count <= text.Length) {
                 yield return new WaitForSeconds(0.04f);
                 dialogueText.text = text.Substring(0, count);
+                SoundManager.instance.PlaySound(sound);
                 count++;
             }
         }
