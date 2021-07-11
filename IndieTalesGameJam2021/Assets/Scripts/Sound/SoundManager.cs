@@ -6,12 +6,12 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour 
 {
-    public static SoundManager instance { get; private set; }
+    public static SoundManager Instance { get; private set; }
 
     private AudioSource source;
 
     private void Awake() {
-        instance = this;
+        Instance = this;
         source = GetComponent<AudioSource>();
     }
 

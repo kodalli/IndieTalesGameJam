@@ -39,7 +39,7 @@ namespace MainGame.DialogueGraph {
             while (count <= text.Length) {
                 yield return new WaitForSeconds(0.04f);
                 dialogueText.text = text.Substring(0, count);
-                SoundManager.instance.PlaySound(sound);
+                SoundManager.Instance.PlaySound(sound);
                 count++;
             }
         }
