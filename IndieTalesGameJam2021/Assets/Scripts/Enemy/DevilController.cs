@@ -8,44 +8,47 @@ using UnityEngine.Timeline;
 
 public class DevilController : MonoBehaviour {
     private static class Drivers {
-        public const string IsMoving = "isMoving";
         public const string IsMovingHorizontal = "isMovingHorizontal";
         public const string IsMovingRight = "isMovingRight";
         public const string IsMovingUp = "isMovingUp";
-
-        public const string WalkLeft = "walkLeft";
-        public const string WalkRight = "walkRight";
-        public const string WalkUp = "walkUp";
-        public const string WalkDown = "walkDown";
-        public const string Idle = "idle";
     }
 
-
+    [SerializeField] private Transform[] path;
     [SerializeField] private float amplitude;
     [SerializeField] private float walkSpeed;
     [SerializeField] private float detectionDistance;
     [SerializeField] private LayerMask playerLayer;
-    private Rigidbody2D rb;
+    [SerializeField] private Transform parent;
     private Reanimator reanimator;
     private CollisionDetection collisionDetection;
     private RaycastHit2D hit2D;
+    private int pathIndex;
+    public Vector2 facingDirection = default;
+    private bool isHit;
 
     private void Start() {
-        rb = GetComponent<Rigidbody2D>();
+        pathIndex = 0;
+        transform.position = path[pathIndex].position;
+        reanimator = GetComponent<Reanimator>();
     }
 
     private void Update() {
-        Hover();
+        Move();
+        
+        reanimator.Set(Drivers.IsMovingHorizontal, MovingHorizontal());
+        reanimator.Set(Drivers.IsMovingRight, MovingRight());
+        reanimator.Set(Drivers.IsMovingUp, MovingUp());
     }
 
     private void FixedUpdate() {
-        var isHit = Helper.Raycast(transform.position, Vector2.right, detectionDistance, playerLayer, out hit2D);
+        isHit = Helper.Raycast(transform.position, facingDirection, detectionDistance, playerLayer, out hit2D);
         if (isHit && hit2D.transform != null) {
+            transform.localScale *= 2f;
             Debug.Log(hit2D.transform.name.WithColour(Color.red));
             Attack();
         }
 
-        Debug.DrawRay(transform.position, Vector2.right * detectionDistance, isHit ? Color.green : Color.red);
+        Debug.DrawRay(transform.position, facingDirection * detectionDistance, isHit ? Color.green : Color.red);
     }
 
     private void Attack() {
@@ -55,29 +58,40 @@ public class DevilController : MonoBehaviour {
             , 1f);
     }
 
-
-    private void Hover() {
-        var lastPosition = transform.position;
-        lastPosition.y += Mathf.Cos(Mathf.PI * Time.time) * amplitude;
-        transform.position = lastPosition;
-    }
-
-    private void UpdateMovementState() {
-        var previousVelocity = collisionDetection.rigidbody2D.velocity;
-        var velocityChange = Vector2.zero;
-
-        velocityChange.x = (walkSpeed - previousVelocity.x) / 4;
-        velocityChange.y = (walkSpeed - previousVelocity.y) / 4;
-
-
-        if (collisionDetection.wallContact.HasValue) {
-            var wallDirection = (int) Mathf.Sign(collisionDetection.wallContact.Value.point.x - transform.position.x);
-            var walkDirection = (int) Mathf.Sign(1);
-
-            if (walkDirection == wallDirection)
-                velocityChange.x = 0;
+    private void Move() {
+        if (isHit) return;
+        if (pathIndex < path.Length) {
+            // sine wave
+            var lastPosition = parent.position;
+            lastPosition.y += Mathf.Cos(Mathf.PI * Time.time) * amplitude;
+            parent.position = lastPosition;
+            
+            // devil movement
+            var position = transform.position;
+            position = Vector2.MoveTowards(position, path[pathIndex].transform.position,
+                walkSpeed * Time.deltaTime);
+            transform.position = position;
+            
+            facingDirection = (path[pathIndex].position - position).normalized;
+        }
+        else {
+            pathIndex = 0;
         }
 
-        collisionDetection.rigidbody2D.AddForce(velocityChange, ForceMode2D.Impulse);
+        if (transform.position == path[pathIndex].position) {
+            pathIndex++;
+        }
+    }
+
+    private bool MovingRight() {
+        return Mathf.Round(facingDirection.x) > 0f;
+    }
+
+    private bool MovingUp() {
+        return Mathf.Round(facingDirection.y) > 0f;
+    }
+
+    private bool MovingHorizontal() {
+        return Mathf.Round(facingDirection.x) != 0;
     }
 }

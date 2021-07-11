@@ -16,29 +16,52 @@ MonoBehaviour:
   - BaseNodeGUID: 65299d7b-d96b-48ba-be9e-a842dc782e3f
     PortName: Next
     TargetNodeGUID: 9f942df4-9ee8-4850-9150-fddc6365da59
-  - BaseNodeGUID: 9f942df4-9ee8-4850-9150-fddc6365da59
-    PortName: continue
-    TargetNodeGUID: 859a7b99-0f9f-4aee-a45b-68c1697ca974
   - BaseNodeGUID: 859a7b99-0f9f-4aee-a45b-68c1697ca974
     PortName: continue
     TargetNodeGUID: ee17c1af-7bca-4c5b-9c2a-bb9304bc5fbf
+  - BaseNodeGUID: 859a7b99-0f9f-4aee-a45b-68c1697ca974
+    PortName: skip
+    TargetNodeGUID: 3e403c80-902d-47fe-a4fd-8d0ae8873844
+  - BaseNodeGUID: 9f942df4-9ee8-4850-9150-fddc6365da59
+    PortName: continue
+    TargetNodeGUID: 859a7b99-0f9f-4aee-a45b-68c1697ca974
+  - BaseNodeGUID: 9f942df4-9ee8-4850-9150-fddc6365da59
+    PortName: skip
+    TargetNodeGUID: 3e403c80-902d-47fe-a4fd-8d0ae8873844
+  - BaseNodeGUID: de604236-d2de-4d54-9ca0-c798597e1a5b
+    PortName: skip
+    TargetNodeGUID: 3e403c80-902d-47fe-a4fd-8d0ae8873844
   - BaseNodeGUID: ee17c1af-7bca-4c5b-9c2a-bb9304bc5fbf
     PortName: continue
     TargetNodeGUID: de604236-d2de-4d54-9ca0-c798597e1a5b
+  - BaseNodeGUID: ee17c1af-7bca-4c5b-9c2a-bb9304bc5fbf
+    PortName: skip
+    TargetNodeGUID: 3e403c80-902d-47fe-a4fd-8d0ae8873844
   DialogueNodeData:
-  - NodeGUID: 859a7b99-0f9f-4aee-a45b-68c1697ca974
-    DialogueText: It seems you have exceeded your lifetime's allowed sin count.
-    Position: {x: 461, y: 347}
-  - NodeGUID: 9f942df4-9ee8-4850-9150-fddc6365da59
-    DialogueText: Hello Billy.
-    Position: {x: 631, y: 200}
-  - NodeGUID: de604236-d2de-4d54-9ca0-c798597e1a5b
-    DialogueText: Stay in your room and let my minions take you away.
-    Position: {x: 502, y: 660}
   - NodeGUID: ee17c1af-7bca-4c5b-9c2a-bb9304bc5fbf
     DialogueText: I will now have to drag you to hell for your punishment.
-    Position: {x: 502, y: 494}
+    Position: {x: 529, y: 1143}
+  - NodeGUID: de604236-d2de-4d54-9ca0-c798597e1a5b
+    DialogueText: Stay in your room and let my minions take you away.
+    Position: {x: 529, y: 1309}
+  - NodeGUID: 859a7b99-0f9f-4aee-a45b-68c1697ca974
+    DialogueText: It seems you have exceeded your lifetime's allowed sin count.
+    Position: {x: 488, y: 996}
+  - NodeGUID: 9f942df4-9ee8-4850-9150-fddc6365da59
+    DialogueText: Hello Billy.
+    Position: {x: 658, y: 849}
+  - NodeGUID: 3e403c80-902d-47fe-a4fd-8d0ae8873844
+    DialogueText: 
+    Position: {x: 1502, y: 1118}
   ExposedProperties:
   - PropertyName: New String
     PropertyValue: New Value
-  CommentBlockData: []
+  CommentBlockData:
+  - ChildNodes:
+    - ee17c1af-7bca-4c5b-9c2a-bb9304bc5fbf
+    - de604236-d2de-4d54-9ca0-c798597e1a5b
+    - 859a7b99-0f9f-4aee-a45b-68c1697ca974
+    - 9f942df4-9ee8-4850-9150-fddc6365da59
+    - 3e403c80-902d-47fe-a4fd-8d0ae8873844
+    Position: {x: 463, y: 790.00006}
+    Title: Dialogue

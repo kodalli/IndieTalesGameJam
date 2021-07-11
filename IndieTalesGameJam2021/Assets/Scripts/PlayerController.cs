@@ -40,13 +40,12 @@ public class PlayerController : MonoBehaviour {
     private Reanimator reanimator;
     private CollisionDetection collisionDetection;
     private GameObject flashLight;
-    
+
     public PlayerState State { get; set; } = PlayerState.Movement;
     public Vector2 MovementInput { get; private set; }
 
     private bool canRun;
     private int enemyLayer;
-    private Vector2 facingDirection;
     private Vector2 lightDirectionInput;
     private Vector2 lightDirection;
 
@@ -61,24 +60,12 @@ public class PlayerController : MonoBehaviour {
         inputReader.MoveEvent += OnMove;
         inputReader.JumpEvent += OnRun;
         inputReader.MousePosEvent += OnMouse;
-
-        reanimator.AddListener(Drivers.WalkRight, () => SetFacingDirection(1, 0));
-        reanimator.AddListener(Drivers.WalkLeft, () => SetFacingDirection(-1, 0));
-        reanimator.AddListener(Drivers.WalkUp, () => SetFacingDirection(0, 1));
-        reanimator.AddListener(Drivers.WalkDown, () => SetFacingDirection(0, -1));
-        reanimator.AddListener(Drivers.Idle, () => SetFacingDirection(0, -1));
     }
 
     private void OnDisable() {
         inputReader.MoveEvent -= OnMove;
         inputReader.JumpEvent -= OnRun;
         inputReader.MousePosEvent -= OnMouse;
-
-        reanimator.RemoveListener(Drivers.WalkRight, () => SetFacingDirection(1, 0));
-        reanimator.RemoveListener(Drivers.WalkLeft, () => SetFacingDirection(-1, 0));
-        reanimator.RemoveListener(Drivers.WalkUp, () => SetFacingDirection(0, 1));
-        reanimator.RemoveListener(Drivers.WalkDown, () => SetFacingDirection(0, -1));
-        reanimator.RemoveListener(Drivers.Idle, () => SetFacingDirection(0, -1));
     }
 
 
@@ -100,7 +87,7 @@ public class PlayerController : MonoBehaviour {
                 UpdateMovementState();
                 break;
             default:
-                throw new ArgumentOutOfRangeException($"Out of Range: ", "Something is wrong with the Enums" );
+                throw new ArgumentOutOfRangeException($"Out of Range: ", "Something is wrong with the Enums");
         }
     }
 
@@ -119,10 +106,6 @@ public class PlayerController : MonoBehaviour {
         State = PlayerState.Run;
 
         runStopwatch.Split();
-    }
-
-    private void SetFacingDirection(int x, int y) {
-        facingDirection = new Vector2(x, y);
     }
 
     private void UpdateLightDirection() {
