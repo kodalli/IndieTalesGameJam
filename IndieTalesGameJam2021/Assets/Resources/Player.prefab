@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1933137117}
   - component: {fileID: 1933137118}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spotlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 000000004914c04c5be151395fdde3bfa78c8303
+  m_ApplyToSortingLayers: 000000004914c04c5be151395fdde3bfb7314236a78c8303
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -119,7 +119,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2067460711}
   - component: {fileID: 2067460712}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PointLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Intensity: 0.79
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 000000004914c04c5be151395fdde3bfa78c8303
+  m_ApplyToSortingLayers: 000000004914c04c5be151395fdde3bfb7314236a78c8303
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -247,7 +247,7 @@ GameObject:
   - component: {fileID: 3002518489345346470}
   - component: {fileID: 3002518489345346471}
   - component: {fileID: 3002518489345346468}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -309,7 +309,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 58952871
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -1892634514498182350, guid: b95358199da23c643ae9e3c4250db8a3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -412,8 +412,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputReader: {fileID: 11400000, guid: 67eac70d777e06345a498ebd5a6af202, type: 2}
+  runSpeed: 15
   walkSpeed: 7
-  dashSpeed: 75
-  dashStopwatch:
-    duration: 0.05
+  runStopwatch:
+    duration: 1
     cooldown: 2
