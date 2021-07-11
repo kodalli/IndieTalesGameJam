@@ -34,15 +34,14 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] private float runSpeed = 10;
     [SerializeField] private float walkSpeed = 7;
 
-    [SerializeField] private FixedStopwatch runStopwatch = new FixedStopwatch();
+    [SerializeField] private Stopwatch runStopwatch = new Stopwatch();
 
 
     private Reanimator reanimator;
     private CollisionDetection collisionDetection;
     private GameObject flashLight;
     
-    public enum BillyState { Movement = 0, Run = 1, }
-    public BillyState State { get; set; } = BillyState.Movement;
+    public PlayerState State { get; set; } = PlayerState.Movement;
     public Vector2 MovementInput { get; private set; }
 
     private bool canRun;
@@ -94,7 +93,7 @@ public class PlayerController : MonoBehaviour {
 
     private void FixedUpdate() {
         switch (State) {
-            case BillyState.Movement:
+            case PlayerState.Movement:
                 UpdateMovementState();
                 break;
             case PlayerState.Run:
@@ -163,9 +162,4 @@ public class PlayerController : MonoBehaviour {
 
         collisionDetection.rigidbody2D.AddForce(velocityChange, ForceMode2D.Impulse);
     }
-    
-    // --- Event Listeners --- //
-    private void OnMouse(Vector2 value) => lightDirectionInput = Camera.main.ScreenToWorldPoint(value) - transform.position;
-    private void OnMove(Vector2 value) => MovementInput = value;
-    private void OnDash() => EnterDashState();
 }
