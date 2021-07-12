@@ -13,7 +13,7 @@ namespace MainGame.DialogueGraph {
         [SerializeField] private Button choicePrefab;
         [SerializeField] private Transform buttonContainer;
         [SerializeField] private AudioClip sound;
-        
+
         private readonly List<Button> buttonList = new List<Button>();
         private bool isTyping;
 
@@ -29,7 +29,7 @@ namespace MainGame.DialogueGraph {
             var buttons = buttonContainer.GetComponentsInChildren<Button>();
             foreach (var button in buttons)
                 Destroy(button.gameObject);
-            
+
             buttonList.Clear();
             foreach (var choice in choices) {
                 var button = Instantiate(choicePrefab, buttonContainer);
@@ -37,12 +37,13 @@ namespace MainGame.DialogueGraph {
                 button.onClick.AddListener(() => ProceedToNarrative(choice.TargetNodeGUID));
                 buttonList.Add(button);
             }
-            
+
             StartCoroutine(PlayDialogue(text));
         }
 
         IEnumerator PlayDialogue(string text) {
-            buttonList[0].enabled = false;
+            ToggleButton(true);
+
             var count = 0;
             while (count <= text.Length) {
                 yield return new WaitForSeconds(0.04f);
@@ -51,7 +52,12 @@ namespace MainGame.DialogueGraph {
                 count++;
             }
 
-            buttonList[0].enabled = true;
+            ToggleButton(false);
+        }
+
+        private void ToggleButton(bool state) {
+            if (buttonList.Count > 0)
+                buttonList[0].enabled = state;
         }
     }
 }
