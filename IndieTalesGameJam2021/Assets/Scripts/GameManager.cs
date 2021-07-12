@@ -5,7 +5,6 @@ using System.Linq.Expressions;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Object = System.Object;
 
 public class GameManager : MonoBehaviour
 {
@@ -21,6 +20,11 @@ public class GameManager : MonoBehaviour
          Destroy(gameObject);
       }
    }
+
+   private void Start() {
+      sceneIndex = SceneManager.GetActiveScene().buildIndex;
+   }
+
    public void GoToNextScene() {
       if (sceneIndex < scenes.Length-1) {
          sceneIndex++;
