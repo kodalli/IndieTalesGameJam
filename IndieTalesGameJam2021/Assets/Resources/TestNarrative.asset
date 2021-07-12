@@ -34,12 +34,30 @@ MonoBehaviour:
   - BaseNodeGUID: ee17c1af-7bca-4c5b-9c2a-bb9304bc5fbf
     PortName: skip
     TargetNodeGUID: 3e403c80-902d-47fe-a4fd-8d0ae8873844
-  - BaseNodeGUID: de604236-d2de-4d54-9ca0-c798597e1a5b
+  - BaseNodeGUID: bbea1ebb-e0c1-4765-8df3-6b3c9d49610e
     PortName: continue
-    TargetNodeGUID: cdedd9cd-05df-4bc6-9ff6-08538e7e65b9
+    TargetNodeGUID: 2fde3ae1-1ef0-48c3-9b9d-b41a1f713e52
+  - BaseNodeGUID: bbea1ebb-e0c1-4765-8df3-6b3c9d49610e
+    PortName: skip
+    TargetNodeGUID: 3e403c80-902d-47fe-a4fd-8d0ae8873844
+  - BaseNodeGUID: 2fde3ae1-1ef0-48c3-9b9d-b41a1f713e52
+    PortName: continue
+    TargetNodeGUID: f47a50a0-ea7a-4a60-bd3c-a4d3b37f4b92
+  - BaseNodeGUID: 2fde3ae1-1ef0-48c3-9b9d-b41a1f713e52
+    PortName: skip
+    TargetNodeGUID: 3e403c80-902d-47fe-a4fd-8d0ae8873844
   - BaseNodeGUID: cdedd9cd-05df-4bc6-9ff6-08538e7e65b9
     PortName: continue
     TargetNodeGUID: 3e403c80-902d-47fe-a4fd-8d0ae8873844
+  - BaseNodeGUID: f47a50a0-ea7a-4a60-bd3c-a4d3b37f4b92
+    PortName: continue
+    TargetNodeGUID: cdedd9cd-05df-4bc6-9ff6-08538e7e65b9
+  - BaseNodeGUID: f47a50a0-ea7a-4a60-bd3c-a4d3b37f4b92
+    PortName: skip
+    TargetNodeGUID: 3e403c80-902d-47fe-a4fd-8d0ae8873844
+  - BaseNodeGUID: de604236-d2de-4d54-9ca0-c798597e1a5b
+    PortName: continue
+    TargetNodeGUID: bbea1ebb-e0c1-4765-8df3-6b3c9d49610e
   - BaseNodeGUID: de604236-d2de-4d54-9ca0-c798597e1a5b
     PortName: skip
     TargetNodeGUID: 3e403c80-902d-47fe-a4fd-8d0ae8873844
@@ -56,12 +74,21 @@ MonoBehaviour:
   - NodeGUID: 3e403c80-902d-47fe-a4fd-8d0ae8873844
     DialogueText: 
     Position: {x: 1526, y: 913}
+  - NodeGUID: bbea1ebb-e0c1-4765-8df3-6b3c9d49610e
+    DialogueText: Also don't use wasd or the arrow keys to move.
+    Position: {x: 597, y: 1278}
+  - NodeGUID: 2fde3ae1-1ef0-48c3-9b9d-b41a1f713e52
+    DialogueText: And don't press the space bar to get a run boost.
+    Position: {x: 597, y: 1430}
   - NodeGUID: cdedd9cd-05df-4bc6-9ff6-08538e7e65b9
     DialogueText: Prepare to die...
-    Position: {x: 656, y: 1249}
+    Position: {x: 683, y: 1765}
+  - NodeGUID: f47a50a0-ea7a-4a60-bd3c-a4d3b37f4b92
+    DialogueText: And definetly don't find the door that leads you outside the room.
+    Position: {x: 549, y: 1591}
   - NodeGUID: de604236-d2de-4d54-9ca0-c798597e1a5b
     DialogueText: Stay in your room and let my minions take you away.
-    Position: {x: 553, y: 1082}
+    Position: {x: 562, y: 1108}
   ExposedProperties:
   - PropertyName: New String
     PropertyValue: New Value
@@ -72,6 +99,9 @@ MonoBehaviour:
     - ee17c1af-7bca-4c5b-9c2a-bb9304bc5fbf
     - 3e403c80-902d-47fe-a4fd-8d0ae8873844
     - de604236-d2de-4d54-9ca0-c798597e1a5b
+    - bbea1ebb-e0c1-4765-8df3-6b3c9d49610e
+    - 2fde3ae1-1ef0-48c3-9b9d-b41a1f713e52
     - cdedd9cd-05df-4bc6-9ff6-08538e7e65b9
+    - f47a50a0-ea7a-4a60-bd3c-a4d3b37f4b92
     Position: {x: 487, y: 585}
     Title: Dialogue

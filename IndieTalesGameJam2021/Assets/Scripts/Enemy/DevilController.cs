@@ -53,8 +53,9 @@ public class DevilController : MonoBehaviour {
 
     private void Attack() {
         transform.position = hit2D.transform.position;
+        SoundManager.Instance.PlayDeathSound();
         this.CallWithDelay(() =>
-                hit2D.transform.gameObject.SetActive(false)
+               GameManager.Instance.GoToMenu() 
             , 1f);
     }
 

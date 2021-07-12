@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/SceneA Dialogue Test.unity
+    path: Assets/Scenes/Level_1.unity
     guid: 4a5fcd3f62fac354a96f67891aa1026c
   - enabled: 1
     path: Assets/Scenes/MenuInterface.unity

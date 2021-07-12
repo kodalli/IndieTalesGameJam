@@ -13,11 +13,13 @@ namespace MainGame.DialogueGraph {
         [SerializeField] private Button choicePrefab;
         [SerializeField] private Transform buttonContainer;
         [SerializeField] private AudioClip sound;
+        [SerializeField] private InputReader inputReader;
 
         private readonly List<Button> buttonList = new List<Button>();
         private bool isTyping;
 
         private void Start() {
+            inputReader.DisableAllInput();
             var narrativeData = dialogue.NodeLinks.First(); //Entrypoint node
             ProceedToNarrative(narrativeData.TargetNodeGUID);
         }
@@ -35,6 +37,7 @@ namespace MainGame.DialogueGraph {
                 var button = Instantiate(choicePrefab, buttonContainer);
                 button.GetComponentInChildren<Text>().text = choice.PortName;
                 button.onClick.AddListener(() => ProceedToNarrative(choice.TargetNodeGUID));
+                button.onClick.AddListener(() => SoundManager.Instance.PlayButtonClickSound());
                 buttonList.Add(button);
             }
 
@@ -42,7 +45,7 @@ namespace MainGame.DialogueGraph {
         }
 
         IEnumerator PlayDialogue(string text) {
-            ToggleButton(true);
+            ToggleButton(false);
 
             var count = 0;
             while (count <= text.Length) {
@@ -52,7 +55,12 @@ namespace MainGame.DialogueGraph {
                 count++;
             }
 
-            ToggleButton(false);
+            ToggleButton(true);
+
+            if (buttonList.Count < 1) {
+                inputReader.EnableGameplayInput();
+                gameObject.SetActive(false);
+            }
         }
 
         private void ToggleButton(bool state) {
