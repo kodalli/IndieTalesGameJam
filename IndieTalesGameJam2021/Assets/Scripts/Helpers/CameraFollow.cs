@@ -28,8 +28,14 @@ public class CameraFollow : MonoBehaviour {
     private Vector2 mousePosition;
 
     private void OnEnable() {
-        inputReader.MousePosEvent += value => { mousePos = value; };
+        inputReader.MousePosEvent += GetMousePos;
     }
+
+    private void OnDisable() {
+        inputReader.MousePosEvent -= GetMousePos;
+    }
+
+    void GetMousePos(Vector2 value) => mousePos = value;
 
     void Start()
     {
