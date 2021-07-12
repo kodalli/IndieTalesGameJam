@@ -12,6 +12,9 @@ public class DevilController : MonoBehaviour {
         public const string IsMovingRight = "isMovingRight";
         public const string IsMovingUp = "isMovingUp";
     }
+    
+    private Reanimator reanimator;
+    private CollisionDetection collisionDetection;
 
     [SerializeField] private Transform[] path;
     [SerializeField] private float amplitude;
@@ -19,8 +22,7 @@ public class DevilController : MonoBehaviour {
     [SerializeField] private float detectionDistance;
     [SerializeField] private LayerMask playerLayer;
     [SerializeField] private Transform parent;
-    private Reanimator reanimator;
-    private CollisionDetection collisionDetection;
+    
     private RaycastHit2D hit2D;
     private int pathIndex;
     public Vector2 facingDirection = default;

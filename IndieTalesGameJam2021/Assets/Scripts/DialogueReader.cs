@@ -9,6 +9,8 @@ using UnityEngine.UI;
 namespace MainGame.DialogueGraph {
 
     public class DialogueReader : MonoBehaviour {
+        [SerializeField] private InputReader inputReader;
+        
         [SerializeField] private DialogueContainer dialogue;
         [SerializeField] private TextMeshProUGUI dialogueText;
         [SerializeField] private Button choicePrefab;
@@ -21,6 +23,8 @@ namespace MainGame.DialogueGraph {
         }
 
         private void ProceedToNarrative(string guid){
+            //inputReader.DisableAllInput();
+            
             string text = dialogue.DialogueNodeData.Find(x => x.NodeGUID == guid).DialogueText;
             var choices = dialogue.NodeLinks.Where(x => x.BaseNodeGUID == guid);
             StartCoroutine(PlayDialogue(text));
@@ -35,6 +39,13 @@ namespace MainGame.DialogueGraph {
             }
         }
         IEnumerator PlayDialogue(string text) {
+
+            if (text.Length == 0) {
+                inputReader.EnableGameplayInput();
+                gameObject.SetActive(false);
+                yield return default;
+            }
+            
             var count = 0;
             while (count <= text.Length) {
                 yield return new WaitForSeconds(0.04f);
