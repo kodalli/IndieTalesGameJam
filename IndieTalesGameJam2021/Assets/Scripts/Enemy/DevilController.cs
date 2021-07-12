@@ -43,7 +43,7 @@ public class DevilController : MonoBehaviour {
     private void FixedUpdate() {
         isHit = Helper.Raycast(transform.position, facingDirection, detectionDistance, playerLayer, out hit2D);
         if (isHit && hit2D.transform != null) {
-            transform.localScale *= 2f;
+            transform.localScale *= 5f;
             Debug.Log(hit2D.transform.name.WithColour(Color.red));
             Attack();
         }
@@ -55,8 +55,8 @@ public class DevilController : MonoBehaviour {
         transform.position = hit2D.transform.position;
         SoundManager.Instance.PlayDeathSound();
         this.CallWithDelay(() =>
-               GameManager.Instance.GoToMenu() 
-            , 1f);
+               GameManager.Instance.GoToCurrentScene()
+            , 0.75f);
     }
 
     private void Move() {

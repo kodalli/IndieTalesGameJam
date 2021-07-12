@@ -35,4 +35,8 @@ public class GameManager : MonoBehaviour
       sceneIndex = 0; 
       SceneManager.LoadScene(scenes[0].name);
    }
+
+   public void GoToCurrentScene() {
+      SceneManager.LoadScene(scenes[sceneIndex].name);
+   }
 }
