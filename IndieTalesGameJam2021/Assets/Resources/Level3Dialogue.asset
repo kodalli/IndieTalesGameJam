@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b3b045ba31c4b189ec3fe8db4471315, type: 3}
+  m_Name: Level3Dialogue
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGUID: e21bcb8e-9d42-422c-a5c8-ae64a736be0d
+    PortName: Next
+    TargetNodeGUID: 0b24d7d3-60b5-4c40-b296-78eb099477d6
+  - BaseNodeGUID: 0b24d7d3-60b5-4c40-b296-78eb099477d6
+    PortName: next
+    TargetNodeGUID: 6740909f-11b4-4d7d-97e7-3f5a8ae97d80
+  - BaseNodeGUID: 0b24d7d3-60b5-4c40-b296-78eb099477d6
+    PortName: skip
+    TargetNodeGUID: f0945f9c-dde6-467b-ba1d-256ccfd7ef43
+  - BaseNodeGUID: 6740909f-11b4-4d7d-97e7-3f5a8ae97d80
+    PortName: next
+    TargetNodeGUID: fbbb2e35-cad4-4db6-871a-d4696734ec62
+  - BaseNodeGUID: 6740909f-11b4-4d7d-97e7-3f5a8ae97d80
+    PortName: skip
+    TargetNodeGUID: f0945f9c-dde6-467b-ba1d-256ccfd7ef43
+  - BaseNodeGUID: fbbb2e35-cad4-4db6-871a-d4696734ec62
+    PortName: next
+    TargetNodeGUID: 7e91554e-f9cd-4cf4-9acd-9565aa4d470d
+  - BaseNodeGUID: fbbb2e35-cad4-4db6-871a-d4696734ec62
+    PortName: skip
+    TargetNodeGUID: f0945f9c-dde6-467b-ba1d-256ccfd7ef43
+  - BaseNodeGUID: 7e91554e-f9cd-4cf4-9acd-9565aa4d470d
+    PortName: next
+    TargetNodeGUID: 8f7a1ba0-a814-4801-a5ff-17c715ab49f4
+  - BaseNodeGUID: 7e91554e-f9cd-4cf4-9acd-9565aa4d470d
+    PortName: skip
+    TargetNodeGUID: f0945f9c-dde6-467b-ba1d-256ccfd7ef43
+  - BaseNodeGUID: d52cf12d-528c-43b3-8748-6922f99b0ea9
+    PortName: skip
+    TargetNodeGUID: f0945f9c-dde6-467b-ba1d-256ccfd7ef43
+  - BaseNodeGUID: d52cf12d-528c-43b3-8748-6922f99b0ea9
+    PortName: next
+    TargetNodeGUID: 2fec8615-dddf-4fce-8ca9-6f3a4f8ebbb3
+  - BaseNodeGUID: 8f7a1ba0-a814-4801-a5ff-17c715ab49f4
+    PortName: next
+    TargetNodeGUID: d52cf12d-528c-43b3-8748-6922f99b0ea9
+  - BaseNodeGUID: 8f7a1ba0-a814-4801-a5ff-17c715ab49f4
+    PortName: Option 2
+    TargetNodeGUID: f0945f9c-dde6-467b-ba1d-256ccfd7ef43
+  - BaseNodeGUID: 2fec8615-dddf-4fce-8ca9-6f3a4f8ebbb3
+    PortName: skip
+    TargetNodeGUID: f0945f9c-dde6-467b-ba1d-256ccfd7ef43
+  - BaseNodeGUID: 2fec8615-dddf-4fce-8ca9-6f3a4f8ebbb3
+    PortName: next
+    TargetNodeGUID: 29756aff-599c-4433-bd99-0652e8480681
+  - BaseNodeGUID: 29756aff-599c-4433-bd99-0652e8480681
+    PortName: skip
+    TargetNodeGUID: f0945f9c-dde6-467b-ba1d-256ccfd7ef43
+  - BaseNodeGUID: 29756aff-599c-4433-bd99-0652e8480681
+    PortName: next
+    TargetNodeGUID: 36d258a5-2b2e-4cd7-baa1-cef80038aa79
+  - BaseNodeGUID: 36d258a5-2b2e-4cd7-baa1-cef80038aa79
+    PortName: next
+    TargetNodeGUID: f0945f9c-dde6-467b-ba1d-256ccfd7ef43
+  DialogueNodeData:
+  - NodeGUID: 0b24d7d3-60b5-4c40-b296-78eb099477d6
+    DialogueText: Billy... its for your own good
+    Position: {x: 276, y: 140}
+  - NodeGUID: 6740909f-11b4-4d7d-97e7-3f5a8ae97d80
+    DialogueText: I know you have a family
+    Position: {x: 162, y: 316}
+  - NodeGUID: fbbb2e35-cad4-4db6-871a-d4696734ec62
+    DialogueText: But you cannot go back to them
+    Position: {x: 215, y: 481}
+  - NodeGUID: 7e91554e-f9cd-4cf4-9acd-9565aa4d470d
+    DialogueText: I've sent even more devils and expanded your room even further.
+    Position: {x: 162, y: 641}
+  - NodeGUID: d52cf12d-528c-43b3-8748-6922f99b0ea9
+    DialogueText: You must die and repent for the mass murder you've commited
+    Position: {x: 178, y: 948}
+  - NodeGUID: 8f7a1ba0-a814-4801-a5ff-17c715ab49f4
+    DialogueText: You will not escape this time
+    Position: {x: 215, y: 793}
+  - NodeGUID: 2fec8615-dddf-4fce-8ca9-6f3a4f8ebbb3
+    DialogueText: Killing people is my job, not yours
+    Position: {x: 215, y: 1104}
+  - NodeGUID: 29756aff-599c-4433-bd99-0652e8480681
+    DialogueText: Who am I supposed to kill now?
+    Position: {x: 215, y: 1283}
+  - NodeGUID: f0945f9c-dde6-467b-ba1d-256ccfd7ef43
+    DialogueText: 
+    Position: {x: 1028, y: 714}
+  - NodeGUID: 36d258a5-2b2e-4cd7-baa1-cef80038aa79
+    DialogueText: Oh yeah. You.
+    Position: {x: 272, y: 1449}
+  ExposedProperties: []
+  CommentBlockData: []
