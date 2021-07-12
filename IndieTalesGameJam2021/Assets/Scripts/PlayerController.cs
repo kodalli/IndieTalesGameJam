@@ -50,6 +50,8 @@ public class PlayerController : MonoBehaviour {
     private Vector2 lightDirection;
 
     private void Awake() {
+        inputReader.EnableGameplayInput();
+        
         reanimator = GetComponent<Reanimator>();
         collisionDetection = GetComponent<CollisionDetection>();
         flashLight = transform.Find("PointLight").gameObject;
