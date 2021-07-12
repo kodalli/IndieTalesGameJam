@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using MainGame;
 using UnityEngine;
 
-public class SoundManager : MonoBehaviour 
-{
+public class SoundManager : MonoBehaviour {
     public static SoundManager Instance { get; private set; }
 
     private AudioSource source;
+    [SerializeField] private AudioClip theme;
 
     private void Awake() {
         Instance = this;

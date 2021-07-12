@@ -20,7 +20,6 @@ public class GameManager : MonoBehaviour
          Destroy(gameObject);
       }
    }
-
    public void GoToNextScene() {
       if (sceneIndex < scenes.Length) {
          SceneManager.LoadScene(scenes[sceneIndex].name);

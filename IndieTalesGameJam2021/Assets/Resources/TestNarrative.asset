@@ -16,13 +16,10 @@ MonoBehaviour:
   - BaseNodeGUID: 65299d7b-d96b-48ba-be9e-a842dc782e3f
     PortName: Next
     TargetNodeGUID: 9f942df4-9ee8-4850-9150-fddc6365da59
-  - BaseNodeGUID: ee17c1af-7bca-4c5b-9c2a-bb9304bc5fbf
+  - BaseNodeGUID: 9f942df4-9ee8-4850-9150-fddc6365da59
     PortName: continue
-    TargetNodeGUID: de604236-d2de-4d54-9ca0-c798597e1a5b
-  - BaseNodeGUID: ee17c1af-7bca-4c5b-9c2a-bb9304bc5fbf
-    PortName: skip
-    TargetNodeGUID: 3e403c80-902d-47fe-a4fd-8d0ae8873844
-  - BaseNodeGUID: de604236-d2de-4d54-9ca0-c798597e1a5b
+    TargetNodeGUID: 859a7b99-0f9f-4aee-a45b-68c1697ca974
+  - BaseNodeGUID: 9f942df4-9ee8-4850-9150-fddc6365da59
     PortName: skip
     TargetNodeGUID: 3e403c80-902d-47fe-a4fd-8d0ae8873844
   - BaseNodeGUID: 859a7b99-0f9f-4aee-a45b-68c1697ca974
@@ -31,10 +28,19 @@ MonoBehaviour:
   - BaseNodeGUID: 859a7b99-0f9f-4aee-a45b-68c1697ca974
     PortName: skip
     TargetNodeGUID: 3e403c80-902d-47fe-a4fd-8d0ae8873844
-  - BaseNodeGUID: 9f942df4-9ee8-4850-9150-fddc6365da59
+  - BaseNodeGUID: ee17c1af-7bca-4c5b-9c2a-bb9304bc5fbf
     PortName: continue
-    TargetNodeGUID: 859a7b99-0f9f-4aee-a45b-68c1697ca974
-  - BaseNodeGUID: 9f942df4-9ee8-4850-9150-fddc6365da59
+    TargetNodeGUID: de604236-d2de-4d54-9ca0-c798597e1a5b
+  - BaseNodeGUID: ee17c1af-7bca-4c5b-9c2a-bb9304bc5fbf
+    PortName: skip
+    TargetNodeGUID: 3e403c80-902d-47fe-a4fd-8d0ae8873844
+  - BaseNodeGUID: de604236-d2de-4d54-9ca0-c798597e1a5b
+    PortName: continue
+    TargetNodeGUID: cdedd9cd-05df-4bc6-9ff6-08538e7e65b9
+  - BaseNodeGUID: cdedd9cd-05df-4bc6-9ff6-08538e7e65b9
+    PortName: continue
+    TargetNodeGUID: 3e403c80-902d-47fe-a4fd-8d0ae8873844
+  - BaseNodeGUID: de604236-d2de-4d54-9ca0-c798597e1a5b
     PortName: skip
     TargetNodeGUID: 3e403c80-902d-47fe-a4fd-8d0ae8873844
   DialogueNodeData:
@@ -47,21 +53,25 @@ MonoBehaviour:
   - NodeGUID: ee17c1af-7bca-4c5b-9c2a-bb9304bc5fbf
     DialogueText: I will now have to drag you to hell for your punishment.
     Position: {x: 553, y: 938}
-  - NodeGUID: de604236-d2de-4d54-9ca0-c798597e1a5b
-    DialogueText: Stay in your room and let my minions take you away.
-    Position: {x: 553, y: 1104}
   - NodeGUID: 3e403c80-902d-47fe-a4fd-8d0ae8873844
     DialogueText: 
     Position: {x: 1526, y: 913}
+  - NodeGUID: cdedd9cd-05df-4bc6-9ff6-08538e7e65b9
+    DialogueText: Prepare to die...
+    Position: {x: 656, y: 1249}
+  - NodeGUID: de604236-d2de-4d54-9ca0-c798597e1a5b
+    DialogueText: Stay in your room and let my minions take you away.
+    Position: {x: 553, y: 1082}
   ExposedProperties:
   - PropertyName: New String
     PropertyValue: New Value
   CommentBlockData:
   - ChildNodes:
-    - ee17c1af-7bca-4c5b-9c2a-bb9304bc5fbf
-    - de604236-d2de-4d54-9ca0-c798597e1a5b
-    - 859a7b99-0f9f-4aee-a45b-68c1697ca974
     - 9f942df4-9ee8-4850-9150-fddc6365da59
+    - 859a7b99-0f9f-4aee-a45b-68c1697ca974
+    - ee17c1af-7bca-4c5b-9c2a-bb9304bc5fbf
     - 3e403c80-902d-47fe-a4fd-8d0ae8873844
-    Position: {x: 487.00003, y: 585}
+    - de604236-d2de-4d54-9ca0-c798597e1a5b
+    - cdedd9cd-05df-4bc6-9ff6-08538e7e65b9
+    Position: {x: 487, y: 585}
     Title: Dialogue
