@@ -17,46 +17,46 @@ MonoBehaviour:
     PortName: Next
     TargetNodeGUID: 9f942df4-9ee8-4850-9150-fddc6365da59
   - BaseNodeGUID: 9f942df4-9ee8-4850-9150-fddc6365da59
-    PortName: continue
+    PortName: next
     TargetNodeGUID: 859a7b99-0f9f-4aee-a45b-68c1697ca974
   - BaseNodeGUID: 9f942df4-9ee8-4850-9150-fddc6365da59
     PortName: skip
     TargetNodeGUID: 3e403c80-902d-47fe-a4fd-8d0ae8873844
   - BaseNodeGUID: 859a7b99-0f9f-4aee-a45b-68c1697ca974
-    PortName: continue
+    PortName: next
     TargetNodeGUID: ee17c1af-7bca-4c5b-9c2a-bb9304bc5fbf
   - BaseNodeGUID: 859a7b99-0f9f-4aee-a45b-68c1697ca974
     PortName: skip
     TargetNodeGUID: 3e403c80-902d-47fe-a4fd-8d0ae8873844
   - BaseNodeGUID: ee17c1af-7bca-4c5b-9c2a-bb9304bc5fbf
-    PortName: continue
+    PortName: next
     TargetNodeGUID: de604236-d2de-4d54-9ca0-c798597e1a5b
   - BaseNodeGUID: ee17c1af-7bca-4c5b-9c2a-bb9304bc5fbf
     PortName: skip
     TargetNodeGUID: 3e403c80-902d-47fe-a4fd-8d0ae8873844
   - BaseNodeGUID: bbea1ebb-e0c1-4765-8df3-6b3c9d49610e
-    PortName: continue
+    PortName: next
     TargetNodeGUID: 2fde3ae1-1ef0-48c3-9b9d-b41a1f713e52
   - BaseNodeGUID: bbea1ebb-e0c1-4765-8df3-6b3c9d49610e
     PortName: skip
     TargetNodeGUID: 3e403c80-902d-47fe-a4fd-8d0ae8873844
   - BaseNodeGUID: 2fde3ae1-1ef0-48c3-9b9d-b41a1f713e52
-    PortName: continue
+    PortName: next
     TargetNodeGUID: f47a50a0-ea7a-4a60-bd3c-a4d3b37f4b92
   - BaseNodeGUID: 2fde3ae1-1ef0-48c3-9b9d-b41a1f713e52
     PortName: skip
     TargetNodeGUID: 3e403c80-902d-47fe-a4fd-8d0ae8873844
   - BaseNodeGUID: cdedd9cd-05df-4bc6-9ff6-08538e7e65b9
-    PortName: continue
+    PortName: next
     TargetNodeGUID: 3e403c80-902d-47fe-a4fd-8d0ae8873844
   - BaseNodeGUID: f47a50a0-ea7a-4a60-bd3c-a4d3b37f4b92
-    PortName: continue
+    PortName: next
     TargetNodeGUID: cdedd9cd-05df-4bc6-9ff6-08538e7e65b9
   - BaseNodeGUID: f47a50a0-ea7a-4a60-bd3c-a4d3b37f4b92
     PortName: skip
     TargetNodeGUID: 3e403c80-902d-47fe-a4fd-8d0ae8873844
   - BaseNodeGUID: de604236-d2de-4d54-9ca0-c798597e1a5b
-    PortName: continue
+    PortName: next
     TargetNodeGUID: bbea1ebb-e0c1-4765-8df3-6b3c9d49610e
   - BaseNodeGUID: de604236-d2de-4d54-9ca0-c798597e1a5b
     PortName: skip
@@ -98,10 +98,10 @@ MonoBehaviour:
     - 859a7b99-0f9f-4aee-a45b-68c1697ca974
     - ee17c1af-7bca-4c5b-9c2a-bb9304bc5fbf
     - 3e403c80-902d-47fe-a4fd-8d0ae8873844
-    - de604236-d2de-4d54-9ca0-c798597e1a5b
     - bbea1ebb-e0c1-4765-8df3-6b3c9d49610e
     - 2fde3ae1-1ef0-48c3-9b9d-b41a1f713e52
     - cdedd9cd-05df-4bc6-9ff6-08538e7e65b9
     - f47a50a0-ea7a-4a60-bd3c-a4d3b37f4b92
+    - de604236-d2de-4d54-9ca0-c798597e1a5b
     Position: {x: 487, y: 585}
     Title: Dialogue

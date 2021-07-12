@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1923461758501892083}
   - component: {fileID: 4277429573200979232}
   - component: {fileID: 574978861428977148}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,6 +123,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c54882bde561ba546ab45a59df421152, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player:
-    serializedVersion: 2
-    m_Bits: 0
+  doorSound: {fileID: 0}
