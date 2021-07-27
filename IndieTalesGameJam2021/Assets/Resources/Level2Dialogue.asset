@@ -28,6 +28,12 @@ MonoBehaviour:
   - BaseNodeGUID: 6740909f-11b4-4d7d-97e7-3f5a8ae97d80
     PortName: skip
     TargetNodeGUID: f0945f9c-dde6-467b-ba1d-256ccfd7ef43
+  - BaseNodeGUID: fbbb2e35-cad4-4db6-871a-d4696734ec62
+    PortName: next
+    TargetNodeGUID: 7e91554e-f9cd-4cf4-9acd-9565aa4d470d
+  - BaseNodeGUID: fbbb2e35-cad4-4db6-871a-d4696734ec62
+    PortName: skip
+    TargetNodeGUID: f0945f9c-dde6-467b-ba1d-256ccfd7ef43
   - BaseNodeGUID: 8f7a1ba0-a814-4801-a5ff-17c715ab49f4
     PortName: next
     TargetNodeGUID: f0945f9c-dde6-467b-ba1d-256ccfd7ef43
@@ -35,12 +41,6 @@ MonoBehaviour:
     PortName: next
     TargetNodeGUID: 8f7a1ba0-a814-4801-a5ff-17c715ab49f4
   - BaseNodeGUID: 7e91554e-f9cd-4cf4-9acd-9565aa4d470d
-    PortName: skip
-    TargetNodeGUID: f0945f9c-dde6-467b-ba1d-256ccfd7ef43
-  - BaseNodeGUID: fbbb2e35-cad4-4db6-871a-d4696734ec62
-    PortName: next
-    TargetNodeGUID: 7e91554e-f9cd-4cf4-9acd-9565aa4d470d
-  - BaseNodeGUID: fbbb2e35-cad4-4db6-871a-d4696734ec62
     PortName: skip
     TargetNodeGUID: f0945f9c-dde6-467b-ba1d-256ccfd7ef43
   DialogueNodeData:
@@ -57,7 +57,7 @@ MonoBehaviour:
     DialogueText: This time it won't be so easy.
     Position: {x: 215, y: 481}
   - NodeGUID: 8f7a1ba0-a814-4801-a5ff-17c715ab49f4
-    DialogueText: Now be good boy and let my minions drag you to hell.
+    DialogueText: Now be a good boy and let my minions drag you to hell.
     Position: {x: 131, y: 774}
   - NodeGUID: 7e91554e-f9cd-4cf4-9acd-9565aa4d470d
     DialogueText: I've sent more devils and expanded your room.

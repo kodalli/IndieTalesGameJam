@@ -40,32 +40,32 @@ MonoBehaviour:
   - BaseNodeGUID: 7e91554e-f9cd-4cf4-9acd-9565aa4d470d
     PortName: skip
     TargetNodeGUID: f0945f9c-dde6-467b-ba1d-256ccfd7ef43
-  - BaseNodeGUID: d52cf12d-528c-43b3-8748-6922f99b0ea9
-    PortName: skip
-    TargetNodeGUID: f0945f9c-dde6-467b-ba1d-256ccfd7ef43
-  - BaseNodeGUID: d52cf12d-528c-43b3-8748-6922f99b0ea9
-    PortName: next
-    TargetNodeGUID: 2fec8615-dddf-4fce-8ca9-6f3a4f8ebbb3
   - BaseNodeGUID: 8f7a1ba0-a814-4801-a5ff-17c715ab49f4
     PortName: next
     TargetNodeGUID: d52cf12d-528c-43b3-8748-6922f99b0ea9
   - BaseNodeGUID: 8f7a1ba0-a814-4801-a5ff-17c715ab49f4
-    PortName: Option 2
+    PortName: skip
     TargetNodeGUID: f0945f9c-dde6-467b-ba1d-256ccfd7ef43
-  - BaseNodeGUID: 2fec8615-dddf-4fce-8ca9-6f3a4f8ebbb3
+  - BaseNodeGUID: 36d258a5-2b2e-4cd7-baa1-cef80038aa79
+    PortName: next
+    TargetNodeGUID: f0945f9c-dde6-467b-ba1d-256ccfd7ef43
+  - BaseNodeGUID: d52cf12d-528c-43b3-8748-6922f99b0ea9
+    PortName: next
+    TargetNodeGUID: 2fec8615-dddf-4fce-8ca9-6f3a4f8ebbb3
+  - BaseNodeGUID: d52cf12d-528c-43b3-8748-6922f99b0ea9
     PortName: skip
     TargetNodeGUID: f0945f9c-dde6-467b-ba1d-256ccfd7ef43
   - BaseNodeGUID: 2fec8615-dddf-4fce-8ca9-6f3a4f8ebbb3
     PortName: next
     TargetNodeGUID: 29756aff-599c-4433-bd99-0652e8480681
-  - BaseNodeGUID: 29756aff-599c-4433-bd99-0652e8480681
+  - BaseNodeGUID: 2fec8615-dddf-4fce-8ca9-6f3a4f8ebbb3
     PortName: skip
     TargetNodeGUID: f0945f9c-dde6-467b-ba1d-256ccfd7ef43
   - BaseNodeGUID: 29756aff-599c-4433-bd99-0652e8480681
     PortName: next
     TargetNodeGUID: 36d258a5-2b2e-4cd7-baa1-cef80038aa79
-  - BaseNodeGUID: 36d258a5-2b2e-4cd7-baa1-cef80038aa79
-    PortName: next
+  - BaseNodeGUID: 29756aff-599c-4433-bd99-0652e8480681
+    PortName: skip
     TargetNodeGUID: f0945f9c-dde6-467b-ba1d-256ccfd7ef43
   DialogueNodeData:
   - NodeGUID: 0b24d7d3-60b5-4c40-b296-78eb099477d6
@@ -80,9 +80,6 @@ MonoBehaviour:
   - NodeGUID: 7e91554e-f9cd-4cf4-9acd-9565aa4d470d
     DialogueText: I've sent even more devils and expanded your room even further.
     Position: {x: 162, y: 641}
-  - NodeGUID: d52cf12d-528c-43b3-8748-6922f99b0ea9
-    DialogueText: You must die and repent for the mass murder you've commited
-    Position: {x: 178, y: 948}
   - NodeGUID: 8f7a1ba0-a814-4801-a5ff-17c715ab49f4
     DialogueText: You will not escape this time
     Position: {x: 215, y: 793}
@@ -98,5 +95,8 @@ MonoBehaviour:
   - NodeGUID: 36d258a5-2b2e-4cd7-baa1-cef80038aa79
     DialogueText: Oh yeah. You.
     Position: {x: 272, y: 1449}
+  - NodeGUID: d52cf12d-528c-43b3-8748-6922f99b0ea9
+    DialogueText: You must die and repent for the mass murder you've commited
+    Position: {x: 178, y: 948}
   ExposedProperties: []
   CommentBlockData: []

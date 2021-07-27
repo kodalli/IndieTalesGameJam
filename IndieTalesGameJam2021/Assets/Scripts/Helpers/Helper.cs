@@ -6,17 +6,18 @@ using UnityEngine;
 // using TMPro;
 using System.Linq;
 // using UnityEngine.EventSystems;
-using UnityEditor;
+#if UNITY_EDITOR
 using UnityEditor.Animations;
+using UnityEditor;
+
+#endif
 
 
 namespace ThunderNut.Extensions {
-
     /// <summary>
     /// Useful functions
     /// </summary>
     public static class Helper {
-
         #region GameObject Extensions
 
         /// <summary>
@@ -71,6 +72,7 @@ namespace ThunderNut.Extensions {
 
         #region Animator Extensions
 
+#if UNITY_EDITOR
         /// <summary>
         /// Returns all the state names from an animator as a string array.
         /// </summary>
@@ -88,6 +90,7 @@ namespace ThunderNut.Extensions {
                 ? null
                 : controller.layers.SelectMany(l => l.stateMachine.states).Select(s => s.state).ToArray();
         }
+#endif
 
 
         /// <summary>
@@ -169,16 +172,16 @@ namespace ThunderNut.Extensions {
         public static void CallWithDelay(this MonoBehaviour mono, Action method, float delay) {
             mono.StartCoroutine(CallWithDelayRoutine(method, delay));
         }
+
         private static IEnumerator CallWithDelayRoutine(Action method, float delay) {
             yield return new WaitForSeconds(delay);
             method();
         }
-        
+
         public static string WithColour(this string text, Color colour) {
             return $"<color=#{ColorUtility.ToHtmlStringRGB(colour)}>{text}</color>";
         }
 
         #endregion
-
     }
 }

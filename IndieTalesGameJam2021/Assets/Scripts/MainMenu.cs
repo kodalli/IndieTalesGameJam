@@ -7,4 +7,8 @@ public class MainMenu : MonoBehaviour
    public void GoToNextScene() {
       GameManager.Instance.GoToNextScene();
    }
+
+   public void ExitGame() {
+      Application.Quit();
+   }
 }

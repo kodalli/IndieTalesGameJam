@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b3b045ba31c4b189ec3fe8db4471315, type: 3}
+  m_Name: FinalDialogue
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGUID: 15c5c9c3-3063-4369-8974-e016d1dd7de5
+    PortName: Next
+    TargetNodeGUID: 6ec46482-3c6e-4a2d-a1a9-5e6f53496e09
+  - BaseNodeGUID: 6ec46482-3c6e-4a2d-a1a9-5e6f53496e09
+    PortName: next
+    TargetNodeGUID: 7a229bb6-7041-47e7-9cd9-524b7dd47a9e
+  - BaseNodeGUID: 7a229bb6-7041-47e7-9cd9-524b7dd47a9e
+    PortName: next
+    TargetNodeGUID: 7cc9a911-c627-43b3-ba1e-a288fab8b010
+  - BaseNodeGUID: 7cc9a911-c627-43b3-ba1e-a288fab8b010
+    PortName: next
+    TargetNodeGUID: c0364019-5a97-4f69-8945-95b0e4ce3b5e
+  - BaseNodeGUID: c0364019-5a97-4f69-8945-95b0e4ce3b5e
+    PortName: next
+    TargetNodeGUID: 37034c56-54a2-4c7f-ada9-df867c95ba85
+  - BaseNodeGUID: 37034c56-54a2-4c7f-ada9-df867c95ba85
+    PortName: next
+    TargetNodeGUID: 54960d18-e359-43ea-8764-9f83e6d417e2
+  - BaseNodeGUID: 54960d18-e359-43ea-8764-9f83e6d417e2
+    PortName: next
+    TargetNodeGUID: 604b1b98-89bc-481b-beed-bae2d836fc2f
+  DialogueNodeData:
+  - NodeGUID: 7a229bb6-7041-47e7-9cd9-524b7dd47a9e
+    DialogueText: I don't care anymore.
+    Position: {x: 253, y: 400}
+  - NodeGUID: 37034c56-54a2-4c7f-ada9-df867c95ba85
+    DialogueText: Yoooo. My GameStop contracts went to the moon!
+    Position: {x: 220, y: 838}
+  - NodeGUID: 604b1b98-89bc-481b-beed-bae2d836fc2f
+    DialogueText: 
+    Position: {x: 835, y: 569}
+  - NodeGUID: 7cc9a911-c627-43b3-ba1e-a288fab8b010
+    DialogueText: I don't get paid enough for this.
+    Position: {x: 241, y: 541}
+  - NodeGUID: c0364019-5a97-4f69-8945-95b0e4ce3b5e
+    DialogueText: Hold on I need to check something.
+    Position: {x: 241, y: 684}
+  - NodeGUID: 6ec46482-3c6e-4a2d-a1a9-5e6f53496e09
+    DialogueText: Billy...
+    Position: {x: 332, y: 228}
+  - NodeGUID: 54960d18-e359-43ea-8764-9f83e6d417e2
+    DialogueText: Screw this I quit!
+    Position: {x: 345, y: 1045}
+  ExposedProperties: []
+  CommentBlockData: []

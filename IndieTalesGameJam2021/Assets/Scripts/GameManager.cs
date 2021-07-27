@@ -1,8 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq.Expressions;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,7 +5,6 @@ public class GameManager : MonoBehaviour
 {
    public static GameManager Instance { get; private set; }
    [SerializeField] private int sceneIndex = 0;
-   [SerializeField] private SceneAsset[] scenes;
    
    private void Awake() {
       if (Instance == null) {
@@ -26,9 +20,9 @@ public class GameManager : MonoBehaviour
    }
 
    public void GoToNextScene() {
-      if (sceneIndex < scenes.Length-1) {
+      if (sceneIndex < SceneManager.sceneCountInBuildSettings-1) {
          sceneIndex++;
-         SceneManager.LoadScene(scenes[sceneIndex].name);
+         SceneManager.LoadScene(sceneIndex);
       }
       else {
          GoToMenu();
@@ -37,10 +31,11 @@ public class GameManager : MonoBehaviour
 
    public void GoToMenu() {
       sceneIndex = 0; 
-      SceneManager.LoadScene(scenes[0].name);
+      SceneManager.LoadScene(sceneIndex);
    }
 
    public void GoToCurrentScene() {
-      SceneManager.LoadScene(scenes[sceneIndex].name);
+      SceneManager.LoadScene(sceneIndex);
    }
+
 }
